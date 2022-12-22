@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --pf: 259 94% 41%;
+    --sf: 314 100% 38%;
+    --af: 174 60% 41%;
+    --nf: 219 14% 22%;
+    --in: 198 93% 60%;
+    --su: 158 64% 52%;
+    --wa: 43 96% 56%;
+    --er: 0 91% 71%;
+    --inc: 198 100% 12%;
+    --suc: 158 100% 10%;
+    --wac: 43 100% 11%;
+    --erc: 0 100% 14%;
+    --rounded-box: 1rem;
+    --rounded-btn: 0.5rem;
+    --rounded-badge: 1.9rem;
+    --animation-btn: 0.25s;
+    --animation-input: 0.2s;
+    --btn-text-case: uppercase;
+    --btn-focus-scale: 0.95;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+    --p: 259 94% 51%;
+    --pc: 0 0% 100%;
+    --s: 314 100% 47%;
+    --sc: 0 0% 100%;
+    --a: 174 60% 51%;
+    --ac: 175 44% 15%;
+    --n: 219 14% 28%;
+    --nc: 0 0% 100%;
+    --b1: 0 0% 100%;
+    --b2: 0 0% 95%;
+    --b3: 180 2% 90%;
+    --bc: 215 28% 17%;
+  }
+
+  html {
+    font-family: poppins;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    flex-shrink: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow,
+      -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter, -webkit-transform, -webkit-filter,
+      -webkit-backdrop-filter;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--rounded-btn, 0.5rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    line-height: 1em;
+    min-height: 3rem;
+    font-weight: 600;
+    text-transform: var(--btn-text-case, uppercase);
+    text-decoration-line: none;
+    border-width: var(--border-btn, 1px);
+    -webkit-animation: button-pop var(--animation-btn, 0.25s) ease-out;
+    animation: button-pop var(--animation-btn, 0.25s) ease-out;
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+  }
+
+  .btn-ghost {
+    border-width: 1px;
+    border-color: transparent;
+    background-color: transparent;
+    color: currentColor;
+  }
+
+  .btn-ghost:hover,
+  .btn-ghost.btn-active {
+    --tw-border-opacity: 0;
+    background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.2;
+  }
+
+  .btn-ghost:focus-visible {
+    outline: 2px solid currentColor;
+  }
+
+  .btn:active:hover,
+  .btn:active:focus {
+    -webkit-animation: none;
+    animation: none;
+    -webkit-transform: scale(var(--btn-focus-scale, 0.95));
+    transform: scale(var(--btn-focus-scale, 0.95));
+  }
+
+  .btn:hover,
+  .btn-active {
+    --tw-border-opacity: 1;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid hsl(var(--nf));
+    outline-offset: 2px;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--rounded-box, 1rem);
+  }
+
+  .card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: var(--padding-card, 2rem);
+    gap: 0.5rem;
+  }
+
+  .card-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+  }
+
+  .slide-in {
+    position: absolute;
+    right: -9999999;
+    transition-property: right;
+    transition-duration: 2s;
+  }
+}
